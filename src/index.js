@@ -1,14 +1,20 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-
+//CSS 
+import './index.css';
 // stateless functional component
 
 // component 
 // always return JSX, return single element
 function BookList(){
     return (
-        <section>
+        <section className='booklist'>
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
             <Book />
         </section>            
     );
@@ -16,33 +22,52 @@ function BookList(){
 
 const Book = () => {
     return (
-        <article>
-            <Image />
+        <article className='book'>
+            <Image></Image>
             <Title />
             <Author />
+            <Comment />
         </article>
     );
 }
 
-const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/81TxbGFGTVL._AC_UL900_SR900,600_.jpg" alt="" />
+const Image = () => {
+    return(
+        <div>
+            <img className='bookImg' src="https://images-na.ssl-images-amazon.com/images/I/91vwHMt+x7L._AC_UL900_SR900,600_.jpg" alt="" />
+        </div>
+    );
+}
  
-const Person = () => {
+// const Person = () => {
+//     return (
+//         <h2>Shun Odaki</h2>
+//     );
+// }
+
+const Comment = () => {
     return (
-        <h2>Shun Odaki</h2>
+        <div>
+            <h2>Enter comments</h2>
+            <input type="text" />
+        </div>
+    );
+}
+const Author = () => {
+    return (
+        <h4>This is author of this book</h4>
     );
 }
 
 const Title = () => {
     return (
-        <h1>Killers of the Flower Moon: The Osage Murders and the Birth of the FBI</h1>
+        <div>
+            <h1>Killers of the Flower Moon: The Osage Murders and the Birth of the FBI</h1>
+        </div>
     );
 }
 
-const Author = () => {
-    return (
-        <p className="text-sky-400">Author</p>
-    );
-}
+
 
 const Message = () => {
     return (
