@@ -19,8 +19,8 @@ body {
 }
 
 .bookImg {
-  width: 40rem;
-  height: 25rem;
+  width: 75%;
+  height: 60%;
   display: flex;
 }
 

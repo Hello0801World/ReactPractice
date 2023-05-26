@@ -7,14 +7,22 @@ import './index.css';
 
 const books = [
     {
-    img: 'https://images-na.ssl-images-amazon.com/images/I/91vwHMt+x7L._AC_UL900_SR900,600_.jpg',
-    title: 'Skybox',
-    author: 'Gunna'
+        id: 1,
+        img: 'https://images-na.ssl-images-amazon.com/images/I/91vwHMt+x7L._AC_UL900_SR900,600_.jpg',
+        title: 'Skybox',
+        author: 'Gunna'
     },
     {
+        id: 2,
         img: 'https://images-na.ssl-images-amazon.com/images/I/81a5KHEkwQL._AC_UL900_SR900,600_.jpg',
         title: 'Praise the lord',
         author: 'ASAP Rocky'
+    },
+    {
+        id: 3,
+        img: 'https://images-na.ssl-images-amazon.com/images/I/71Pyj+9IPdL._AC_UL900_SR900,600_.jpg',
+        title: 'Plain Jane',
+        author: 'ASAP Ferg'
     },
 ];
 
@@ -25,9 +33,8 @@ function BookList(){
     return (
         <section className='booklist'>
             {books.map((book) => {
-                const {img, title, author} = book;
                 return (
-                    <Book book={book}></Book>
+                    <Book key={book.id} {...book}></Book>
                 )
             })}
         </section>            
@@ -36,11 +43,18 @@ function BookList(){
 
 // props (properties)
 const Book = (props) => {
-    console.log(props)
+    // attribute, eventHandler
     
-    // variable
-    
-    const { img, title, author} = props.book  // destructure object
+
+    const { img, title, author} = props
+
+    const clickHandler = () => {
+        alert('hello world');
+    };
+
+    const complexExample = (author) =>{
+        console.log(author);
+    };
 
     return (
         <article className='book'>
@@ -55,6 +69,9 @@ const Book = (props) => {
                 <h2>Comment</h2>
                 <input type="text" />
             </div>
+            <button type='button' onClick={clickHandler}>Reference</button>
+            <button type='button' onClick={() => complexExample(author)}>More complex example</button>
+            {/* Function gets called only when it is clicked by setting arrow function  */}
             
         </article>
     );
