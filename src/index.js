@@ -25,9 +25,10 @@ function BookList(){
     return (
         <section className='booklist'>
             {books.map((book) => {
-                const {img, title, author} = book
-                console.log(book)
-                return 'Hello';
+                const {img, title, author} = book;
+                return (
+                    <Book book={book}></Book>
+                )
             })}
         </section>            
     );
@@ -35,11 +36,11 @@ function BookList(){
 
 // props (properties)
 const Book = (props) => {
-    console.log(props.title)
-    // const title2 = props.job
+    console.log(props)
+    
     // variable
     
-    const { img, title, author} = props  // destructure object
+    const { img, title, author} = props.book  // destructure object
 
     return (
         <article className='book'>
