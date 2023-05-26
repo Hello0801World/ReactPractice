@@ -5,48 +5,30 @@ import ReactDom from 'react-dom';
 import './index.css';
 // stateless functional component
 
-
-const firstBook = {
+const books = [
+    {
     img: 'https://images-na.ssl-images-amazon.com/images/I/91vwHMt+x7L._AC_UL900_SR900,600_.jpg',
     title: 'Skybox',
     author: 'Gunna'
-}
+    },
+    {
+        img: 'https://images-na.ssl-images-amazon.com/images/I/81a5KHEkwQL._AC_UL900_SR900,600_.jpg',
+        title: 'Praise the lord',
+        author: 'ASAP Rocky'
+    },
+];
 
-const secondBook = {
-    img: 'https://images-na.ssl-images-amazon.com/images/I/81a5KHEkwQL._AC_UL900_SR900,600_.jpg',
-    title: 'Praise the lord',
-    author: 'ASAP Rocky'
-}
+ 
 // component 
 // always return JSX, return single element
 function BookList(){
     return (
         <section className='booklist'>
-            <Book 
-            img={firstBook.img} 
-            title={firstBook.title} 
-            author={firstBook.author} 
-            > 
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing 
-                    and typesetting industry. Lorem Ipsum has been 
-                    the industry's standard dummy text ever since the 1500s, 
-                    when an unknown printer took a galley of type and scrambled 
-                    it to make a type specimen book. It has survived not only 
-                    five centuries, but also the leap into electronic typesetting, 
-                    remaining essentially unchanged. It was popularised in the 1960s 
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-                <select name="cars" id="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                </select>
-            </Book> { /* pass the object name and value */ }
-
-            <Book img={secondBook.img} 
-            title={secondBook.title} 
-            author={secondBook.author} />
+            {books.map((book) => {
+                const {img, title, author} = book
+                console.log(book)
+                return 'Hello';
+            })}
         </section>            
     );
 }
