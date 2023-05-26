@@ -11,11 +11,6 @@ function BookList(){
     return (
         <section className='booklist'>
             <Book />
-            <Book />
-            <Book />
-            <Book />
-            <Book />
-            <Book />
         </section>            
     );
 }
@@ -23,65 +18,20 @@ function BookList(){
 const Book = () => {
     return (
         <article className='book'>
-            <Image></Image>
-            <Title />
-            <Author />
-            <Comment />
+            <img className='bookImg' src='https://images-na.ssl-images-amazon.com/images/I/91vwHMt+x7L._AC_UL900_SR900,600_.jpg' alt="" />
+            <h1>Killers of the Flower Moon: The Osage Murders and the Birth of the FBI</h1>
+            <h4 style={{color: '#617d98', fontSize: '0.75rem', 
+            marginTop: '0.25' }}>
+            This is author of this book
+            </h4>
+            <div>
+                <h2>Comment</h2>
+                <input type="text" />
+            </div>
+            
         </article>
     );
 }
-
-const Image = () => {
-    return(
-        <div>
-            <img className='bookImg' src="https://images-na.ssl-images-amazon.com/images/I/91vwHMt+x7L._AC_UL900_SR900,600_.jpg" alt="" />
-        </div>
-    );
-}
- 
-// const Person = () => {
-//     return (
-//         <h2>Shun Odaki</h2>
-//     );
-// }
-
-const Comment = () => {
-    return (
-        <div>
-            <h2>Enter comments</h2>
-            <input type="text" />
-        </div>
-    );
-}
-const Author = () => {
-    return (
-        <h4>This is author of this book</h4>
-    );
-}
-
-const Title = () => {
-    return (
-        <div>
-            <h1>Killers of the Flower Moon: The Osage Murders and the Birth of the FBI</h1>
-        </div>
-    );
-}
-
-
-
-const Message = () => {
-    return (
-        <div>
-            Enter something <input type = "text"/>
-        </div>
-    );
-}
-
-// const Greeting = () => {
-//     return React.createElement('div', 
-//     {}, 
-//     React.createElement('h1', {}, 'hello world')) // 
-// };
 
 // pass the function to index.html by using root and react dom
 // ReactDom.render(FUNCTION_NAME, where) pass the function name within the clsing tag <FUNCTION_NAME />
