@@ -48,16 +48,20 @@ const Book = (props) => {
 
     const { img, title, author} = props
 
-    const clickHandler = () => {
+    const clickHandler = (e) => {
         alert('hello world');
-    };
+        console.log(e);
+        console.log(e.target);
+    }; 
 
     const complexExample = (author) =>{
         console.log(author);
     };
 
     return (
-        <article className='book'>
+        <article className='book' onMouseEnter={() => {
+            console.log(title);
+        }}>
             <img className='bookImg' src={img} alt="" />
             <h1>{title}</h1>
             <h4 style={{color: '#617d98', fontSize: '0.75rem', 
